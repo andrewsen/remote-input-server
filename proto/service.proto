@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "ua.senko.remoteinput.utils";
+option java_outer_classname = "RemoteInputProto";
+
+package remoteinput;
+
+service RemoteInputService {
+    rpc SendScrollData (ScrollDataMsg) returns (Empty) {}
+    rpc SendMouseData (MouseDataMsg) returns (Empty) {}
+    rpc SendButtonData (ButtonDataMsg) returns (Empty) {}
+    rpc SendConnectData (ConnectDataMsg) returns (ConnectResponseMsg) {}
+}
+
+message Empty {}
+
+message ScrollDataMsg {
+    int32 valueX = 1;
+    int32 valueY = 2;
+}
+
+message MouseDataMsg {
+    int32 deltaX = 1;
+    int32 deltaY = 2;
+}
+
+message ButtonDataMsg {
+    bool pressed = 1;
+    int32 button = 2;
+}
+
+message ConnectDataMsg {
+    int32 check = 1;
+}
+
+message ConnectResponseMsg {
+    int32 check = 1;
+}
+

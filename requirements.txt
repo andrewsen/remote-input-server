@@ -1,0 +1,7 @@
+grpcio==1.33.2
+ifaddr==0.1.7
+netifaces==0.10.9
+protobuf==3.14.0
+python-uinput==0.11.2
+six==1.15.0
+zeroconf==0.28.6
